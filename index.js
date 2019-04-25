@@ -3,16 +3,17 @@
  */
 
 import React, { Component } from 'react'
-import { Animated, Dimensions, Easing, Image, Platform, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { Animated, Dimensions, Easing, Image, Platform, StyleSheet, Text, TouchableHighlight, View, ViewPropTypes } from 'react-native'
 import Item from './item'
+import PropTypes from 'prop-types'
 
 export default class Tabbar extends Component {
   
   static propTypes = {
     ...View.propTypes,
-    style: View.propTypes.style,
-    activeColor: React.PropTypes.string,
-    height: React.PropTypes.number,
+    style: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+    activeColor: PropTypes.string,
+    height: PropTypes.number,
   }
   static Item = Item
   
